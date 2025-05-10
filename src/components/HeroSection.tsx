@@ -1,8 +1,15 @@
 
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import ImageCarousel from "./ImageCarousel";
 
 const HeroSection = () => {
+  const carouselImages = [
+    "/lovable-uploads/5ae6a329-9447-4376-9052-d7937d4c9953.png",
+    "/lovable-uploads/94a61802-b9d5-42c7-a45a-20a30fc31960.png",
+    "/lovable-uploads/cd2677ed-7785-4b0c-85b7-b5f15678affc.png"
+  ];
+
   return (
     <section className="relative min-h-screen flex items-center pt-20">
       {/* Background Elements */}
@@ -48,14 +55,13 @@ const HeroSection = () => {
           </div>
         </div>
 
-        {/* Image */}
+        {/* Image Carousel */}
         <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
-          <div className="relative">
+          <div className="relative w-full">
             <div className="absolute inset-0 -z-10 bg-brand-red/10 blur-3xl rounded-full"></div>
-            <img 
-              src="https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3" 
-              alt="Students learning" 
-              className="rounded-xl shadow-2xl object-cover h-[500px] w-full object-center animate-float"
+            <ImageCarousel 
+              images={carouselImages} 
+              className="shadow-2xl animate-float"
             />
             <div className="absolute -bottom-8 -right-8 bg-white shadow-xl rounded-lg p-4 z-10">
               <p className="text-brand-red font-bold text-lg">+1200</p>
