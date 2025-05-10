@@ -13,7 +13,19 @@ const HeroSection = () => {
 
   return (
     <section className="relative min-h-screen flex items-center pt-20">
-      {/* Background Elements */}
+      {/* Background Image */}
+      <div className="absolute inset-0 -z-20">
+        <img 
+          src="/lovable-uploads/7e5c0d10-1046-4a9e-9b24-092f02a2b34d.png" 
+          alt="Background with dog and quote" 
+          className="w-full h-full object-cover"
+        />
+      </div>
+      
+      {/* Semi-transparent overlay for better text readability */}
+      <div className="absolute inset-0 -z-10 bg-white/70"></div>
+
+      {/* Background Elements - slightly modified for visibility */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <div className="absolute top-0 right-0 h-[70vh] w-1/3 bg-brand-red/5 rounded-bl-[200px]"></div>
         <div className="absolute bottom-0 left-0 h-[40vh] w-1/4 bg-brand-red/10 rounded-tr-[100px]"></div>
@@ -38,15 +50,22 @@ const HeroSection = () => {
             </Button>
           </div>
           
+          {/* Quote from the background image */}
+          <div className="mt-8 p-4 bg-white/80 rounded-lg shadow-sm inline-block">
+            <p className="text-gray-800 italic font-serif">
+              "To have another language is to possess a second soul"
+            </p>
+          </div>
+          
           {/* Stats */}
-          <div className="mt-12 grid grid-cols-3 gap-4">
+          <div className="mt-8 grid grid-cols-3 gap-4">
             {[
               { value: "10+", label: "Lat doświadczenia" },
               { value: "2", label: "Lokalizacje" },
               { value: "Wysoka", label: "Skuteczność nauczania" }
             ].map((stat, index) => (
               <div key={index} className={cn(
-                "py-4 text-center",
+                "py-4 text-center bg-white/80 rounded-lg",
                 index !== 0 && "border-l border-gray-200"
               )}>
                 <p className="text-3xl font-serif font-bold text-brand-red">{stat.value}</p>
