@@ -1,5 +1,5 @@
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { 
   Carousel,
   CarouselContent,
@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/carousel";
 import { cn } from "@/lib/utils";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import type { CarouselApi } from "@/components/ui/carousel";
 
 type ImageCarouselProps = {
   images: string[];
@@ -24,20 +25,45 @@ const ImageCarousel = ({
   interval = 5000
 }: ImageCarouselProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [api, setApi] = useState<CarouselApi>();
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
+  // Set up autoplay
   useEffect(() => {
-    let timer: NodeJS.Timeout;
-    
-    if (autoplay) {
-      timer = setInterval(() => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-      }, interval);
+    if (!api || !autoplay) return;
+
+    // Clear any existing interval
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
     }
 
+    // Set up new interval for autoplay
+    intervalRef.current = setInterval(() => {
+      api.scrollNext();
+    }, interval);
+
+    // Cleanup on unmount or when dependencies change
     return () => {
-      if (timer) clearInterval(timer);
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+      }
     };
-  }, [autoplay, images.length, interval]);
+  }, [api, autoplay, interval]);
+
+  // Update currentIndex when carousel slides change
+  useEffect(() => {
+    if (!api) return;
+    
+    const onSelect = () => {
+      setCurrentIndex(api.selectedScrollSnap());
+    };
+    
+    api.on("select", onSelect);
+    
+    return () => {
+      api.off("select", onSelect);
+    };
+  }, [api]);
 
   return (
     <div className={cn("relative rounded-xl overflow-hidden", className)}>
@@ -47,13 +73,7 @@ const ImageCarousel = ({
           loop: true,
         }}
         className="w-full"
-        setApi={(api) => {
-          if (api) {
-            api.on("select", () => {
-              setCurrentIndex(api.selectedScrollSnap());
-            });
-          }
-        }}
+        setApi={setApi}
       >
         <CarouselContent>
           {images.map((image, index) => (
@@ -82,7 +102,7 @@ const ImageCarousel = ({
               "w-2.5 h-2.5 rounded-full transition-all",
               index === currentIndex ? "bg-brand-red scale-125" : "bg-white/70 hover:bg-white"
             )}
-            onClick={() => setCurrentIndex(index)}
+            onClick={() => api?.scrollTo(index)}
             aria-label={`Przejdź do zdjęcia ${index + 1}`}
           />
         ))}
