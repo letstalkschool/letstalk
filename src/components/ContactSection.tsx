@@ -57,8 +57,21 @@ const ContactSection = () => {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="font-bold mb-1">Adres</h3>
-                  <p className="text-gray-600">ul. Językowa 42, 00-000 Warszawa</p>
+                  <h3 className="font-bold mb-1">Adres w Poznaniu</h3>
+                  <p className="text-gray-600">ul. Milczańska 16C/21, 61-131 Poznań</p>
+                </div>
+              </div>
+              
+              <div className="flex items-start">
+                <div className="bg-brand-red/10 p-3 rounded-lg mr-4">
+                  <svg className="w-6 h-6 text-brand-red" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="font-bold mb-1">Adres w Więcborku</h3>
+                  <p className="text-gray-600">ul. Parkowa 3, 89-410 Więcbork</p>
                 </div>
               </div>
               
@@ -70,7 +83,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h3 className="font-bold mb-1">Email</h3>
-                  <p className="text-gray-600">kontakt@letstalk.pl</p>
+                  <p className="text-gray-600">biuro@letstalk.net.pl</p>
                 </div>
               </div>
               
@@ -82,20 +95,17 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h3 className="font-bold mb-1">Telefon</h3>
-                  <p className="text-gray-600">+48 123 456 789</p>
+                  <p className="text-gray-600">660 174 331</p>
                 </div>
               </div>
             </div>
             
-            <div className="mt-12 grid grid-cols-2 gap-4">
-              <div className="bg-white p-6 rounded-lg shadow-md text-center">
-                <h3 className="font-bold mb-2">Godziny otwarcia</h3>
-                <p className="text-gray-600">Poniedziałek - Piątek: 9:00 - 20:00</p>
-                <p className="text-gray-600">Sobota: 10:00 - 16:00</p>
-              </div>
-              <div className="bg-white p-6 rounded-lg shadow-md text-center">
-                <h3 className="font-bold mb-2">Obsługa klienta</h3>
-                <p className="text-gray-600">Poniedziałek - Piątek: 9:00 - 17:00</p>
+            <div className="mt-12">
+              <h3 className="font-bold mb-3">Dane Firmy</h3>
+              <div className="bg-white p-6 rounded-lg shadow-md">
+                <p className="mb-2"><strong>Let's talk! Roma Włoch</strong></p>
+                <p className="text-gray-600">ul. Milczańska 16C/21, 61-131 Poznań</p>
+                <p className="text-gray-600">NIP: 5040012644</p>
               </div>
             </div>
           </div>
@@ -138,7 +148,7 @@ const ContactSection = () => {
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  placeholder="+48 123 456 789"
+                  placeholder="660 174 331"
                   className="border-gray-300"
                 />
               </div>

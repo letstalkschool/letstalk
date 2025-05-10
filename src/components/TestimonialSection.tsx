@@ -1,21 +1,21 @@
 
 const testimonials = [
   {
-    content: "Nauka w Let's Talk to była najlepsza decyzja językowa w moim życiu. Metody nauczania są innowacyjne, a nauczyciele zawsze gotowi do pomocy. Po roku nauki zdałam egzamin FCE z wyróżnieniem!",
+    content: "Bardzo profesjonalna szkoła z indywidualnym podejściem do ucznia. Zajęcia prowadzone są w miłej atmosferze, a lektorzy zawsze chętnie służą pomocą. Dzięki Let's Talk moje dzieci pokochały naukę języka!",
     author: "Anna Kowalska",
-    role: "Uczennica kursu Advanced",
+    role: "Mama dwójki uczniów",
     avatar: "https://randomuser.me/api/portraits/women/17.jpg"
   },
   {
-    content: "Szukałem szkoły, która pomoże mi rozwinąć język biznesowy. Let's Talk nie tylko spełniła moje oczekiwania, ale je przewyższyła. Teraz swobodnie prowadzę negocjacje w języku angielskim.",
+    content: "Od lat uczęszczam na zajęcia do Let's Talk i widzę ogromne postępy. Metody nauczania są bardzo skuteczne, a atmosfera sprawia, że nauka jest przyjemnością. Polecam każdemu, kto chce skutecznie nauczyć się języka.",
     author: "Marcin Nowak",
-    role: "Manager w firmie IT",
+    role: "Uczestnik kursu biznesowego",
     avatar: "https://randomuser.me/api/portraits/men/32.jpg"
   },
   {
-    content: "Atmosfera w szkole jest niesamowita. Zajęcia są interaktywne, a nauczyciele potrafią zmotywować do nauki. Po dwóch miesiącach nauki czuję ogromny postęp w moich umiejętnościach językowych.",
-    author: "Karolina Wójcik",
-    role: "Studentka kursu hiszpańskiego",
+    content: "Zdecydowana większość uczniów jest z nami związana od lat, a nowi słuchacze w większości dołączają do nas z polecenia. To świadczy o jakości naszych usług i zadowoleniu uczniów.",
+    author: "Roma Włoch",
+    role: "Właścicielka szkoły Let's Talk",
     avatar: "https://randomuser.me/api/portraits/women/44.jpg"
   }
 ];
@@ -25,7 +25,7 @@ const TestimonialSection = () => {
     <section id="testimonials" className="section-padding bg-brand-red/5">
       <div className="container-custom">
         <div className="text-center mb-16">
-          <p className="text-brand-red font-medium mb-2">OPINIE UCZNIÓW</p>
+          <p className="text-brand-red font-medium mb-2">OPINIE</p>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Co mówią o nas nasi uczniowie</h2>
           <div className="w-20 h-1 bg-brand-red mx-auto mb-6"></div>
         </div>

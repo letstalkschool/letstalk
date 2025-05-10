@@ -2,12 +2,13 @@
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import ImageCarousel from "./ImageCarousel";
+import { SCHOOL_IMAGES } from "@/pages/Index";
 
 const HeroSection = () => {
   const carouselImages = [
-    "/lovable-uploads/5ae6a329-9447-4376-9052-d7937d4c9953.png",
-    "/lovable-uploads/94a61802-b9d5-42c7-a45a-20a30fc31960.png",
-    "/lovable-uploads/cd2677ed-7785-4b0c-85b7-b5f15678affc.png"
+    SCHOOL_IMAGES.teacherAndStudents,
+    SCHOOL_IMAGES.classroom,
+    SCHOOL_IMAGES.groupLessons
   ];
 
   return (
@@ -22,11 +23,11 @@ const HeroSection = () => {
         {/* Text Content */}
         <div className="order-2 lg:order-1 animate-fade-in">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-            Doskonałość w <span className="text-brand-red">nauce języków</span> na każdym poziomie
+            Szkoła językowa <span className="text-brand-red">Let's Talk!</span>
           </h1>
           <p className="text-lg md:text-xl text-gray-700 mb-8 max-w-lg">
-            Nasza szkoła to miejsce, gdzie pasja do nauczania łączy się z innowacyjnymi metodami, 
-            tworząc idealne środowisko dla Twojego rozwoju językowego.
+            Od 10 lat pomagamy naszym uczniom rozwinąć skrzydła. Profesjonalnie i z pasją! 
+            Oferujemy ciekawe zajęcia, skrojone na miarę potrzeb naszych uczniów.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Button className="bg-brand-red hover:bg-brand-darkred text-white text-lg px-8 py-6">
@@ -40,9 +41,9 @@ const HeroSection = () => {
           {/* Stats */}
           <div className="mt-12 grid grid-cols-3 gap-4">
             {[
-              { value: "98%", label: "Zadowolonych uczniów" },
               { value: "10+", label: "Lat doświadczenia" },
-              { value: "25+", label: "Profesjonalnych nauczycieli" }
+              { value: "2", label: "Lokalizacje" },
+              { value: "Wysoka", label: "Skuteczność nauczania" }
             ].map((stat, index) => (
               <div key={index} className={cn(
                 "py-4 text-center",
@@ -64,8 +65,8 @@ const HeroSection = () => {
               className="shadow-2xl animate-float"
             />
             <div className="absolute -bottom-8 -right-8 bg-white shadow-xl rounded-lg p-4 z-10">
-              <p className="text-brand-red font-bold text-lg">+1200</p>
-              <p className="text-gray-600 text-sm">Absolwentów rocznie</p>
+              <p className="text-brand-red font-bold text-lg">Lokalnie</p>
+              <p className="text-gray-600 text-sm">i kameralnie!</p>
             </div>
           </div>
         </div>

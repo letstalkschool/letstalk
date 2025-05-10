@@ -15,8 +15,9 @@ const Footer = () => {
               />
             </a>
             <p className="text-gray-400 mb-6">
-              Profesjonalna szkoła językowa z wieloletnim doświadczeniem. 
-              Oferujemy kursy na wszystkich poziomach zaawansowania.
+              Od 10 lat pomagamy naszym uczniom rozwinąć skrzydła. 
+              Profesjonalnie i z pasją! Oferujemy ciekawe zajęcia, 
+              skrojone na miarę potrzeb naszych uczniów.
             </p>
             <div className="flex space-x-4">
               {["facebook", "instagram", "youtube", "linkedin"].map((social) => (
@@ -47,11 +48,11 @@ const Footer = () => {
           </div>
           
           <div>
-            <h3 className="text-lg font-bold mb-6">Kursy</h3>
+            <h3 className="text-lg font-bold mb-6">Nasze Kursy</h3>
             <ul className="space-y-4">
-              {["Angielski", "Niemiecki", "Francuski", "Hiszpański", "Włoski"].map((language) => (
+              {["Angielski", "Hiszpański", "Zajęcia grupowe", "Zajęcia indywidualne", "Kursy dla firm"].map((language) => (
                 <li key={language}>
-                  <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                  <a href="#courses" className="text-gray-400 hover:text-white transition-colors">
                     {language}
                   </a>
                 </li>
@@ -60,51 +61,49 @@ const Footer = () => {
           </div>
           
           <div>
-            <h3 className="text-lg font-bold mb-6">Przydatne linki</h3>
+            <h3 className="text-lg font-bold mb-6">Lokalizacje</h3>
             <ul className="space-y-4">
-              {[
-                { label: "O nas", href: "#about" },
-                { label: "Kursy", href: "#courses" },
-                { label: "Cennik", href: "#" },
-                { label: "FAQ", href: "#" },
-                { label: "Kontakt", href: "#contact" },
-              ].map((link) => (
-                <li key={link.label}>
-                  <a href={link.href} className="text-gray-400 hover:text-white transition-colors">
-                    {link.label}
-                  </a>
-                </li>
-              ))}
+              <li>
+                <p className="text-white font-medium">Poznań</p>
+                <p className="text-gray-400">ul. Milczańska 16C/21</p>
+                <p className="text-gray-400">61-131 Poznań</p>
+              </li>
+              <li>
+                <p className="text-white font-medium">Więcbork</p>
+                <p className="text-gray-400">ul. Parkowa 3</p>
+                <p className="text-gray-400">89-410 Więcbork</p>
+              </li>
             </ul>
           </div>
           
           <div>
-            <h3 className="text-lg font-bold mb-6">Newsletter</h3>
-            <p className="text-gray-400 mb-4">
-              Zapisz się do naszego newslettera, aby otrzymywać informacje o promocjach i nowościach.
-            </p>
-            <form className="mb-4 flex">
-              <input 
-                type="email" 
-                placeholder="Twój email" 
-                className="bg-gray-800 text-white px-4 py-2 rounded-l-lg flex-grow focus:outline-none focus:ring-1 focus:ring-brand-red"
-              />
-              <button 
-                type="submit" 
-                className="bg-brand-red hover:bg-brand-darkred text-white px-4 py-2 rounded-r-lg transition-colors"
-              >
-                Zapisz
-              </button>
-            </form>
-            <p className="text-xs text-gray-500">
-              Zapisując się, zgadzasz się na otrzymywanie wiadomości email od Let's Talk zgodnie z naszą polityką prywatności.
-            </p>
+            <h3 className="text-lg font-bold mb-6">Kontakt</h3>
+            <ul className="space-y-4">
+              <li className="flex items-center">
+                <svg className="w-5 h-5 mr-3 text-brand-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+                <span className="text-gray-400">660 174 331</span>
+              </li>
+              <li className="flex items-center">
+                <svg className="w-5 h-5 mr-3 text-brand-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                <span className="text-gray-400">biuro@letstalk.net.pl</span>
+              </li>
+              <li className="flex items-center">
+                <svg className="w-5 h-5 mr-3 text-brand-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span className="text-gray-400">Pn-Pt: 9:00 - 20:00</span>
+              </li>
+            </ul>
           </div>
         </div>
         
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between">
           <p className="text-gray-400 text-center md:text-left mb-4 md:mb-0">
-            &copy; {new Date().getFullYear()} Let's Talk. Wszelkie prawa zastrzeżone.
+            &copy; {new Date().getFullYear()} Let's Talk! Roma Włoch. Wszelkie prawa zastrzeżone.
           </p>
           <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-6 items-center">
             {["Polityka prywatności", "Warunki korzystania", "Mapa strony"].map((item) => (

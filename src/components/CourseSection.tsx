@@ -4,25 +4,40 @@ import { cn } from "@/lib/utils";
 
 const courses = [
   {
-    title: "Angielski dla początkujących",
-    description: "Idealny kurs dla osób rozpoczynających naukę języka angielskiego od podstaw.",
-    duration: "3 miesiące",
-    level: "A1-A2",
-    features: ["Małe grupy", "Certyfikat ukończenia", "Materiały w cenie"]
+    title: "Zajęcia grupowe",
+    description: "Małe grupy liczące od 2 do 8 osób, dostosowane do poziomu językowego i wieku uczniów.",
+    duration: "30 lekcji",
+    level: "Wszystkie poziomy",
+    features: [
+      "Zajęcia 1-2 razy w tygodniu",
+      "Grupy 2-osobowe: 2100zł/os",
+      "Grupy 3-osobowe: 1800zł/os",
+      "Grupy 4-6 osób: 1500zł/os"
+    ]
   },
   {
-    title: "Konwersacje biznesowe",
-    description: "Zaawansowany kurs dla profesjonalistów chcących doskonalić język w kontekście biznesowym.",
-    duration: "2 miesiące",
-    level: "B2-C1",
-    features: ["Praktyczne scenariusze", "Native speakers", "Indywidualne konsultacje"]
+    title: "Zajęcia indywidualne",
+    description: "Kursy szyte na miarę każdego ucznia, odpowiadające w pełni na indywidualne potrzeby.",
+    duration: "Elastyczna",
+    level: "Wszystkie poziomy",
+    features: [
+      "Kursy ogólne i specjalistyczne",
+      "30 lekcji: 99zł/lekcja",
+      "60 lekcji: 94zł/lekcja",
+      "90-120 lekcji: od 80zł/lekcja"
+    ]
   },
   {
-    title: "Przygotowanie do egzaminów",
-    description: "Kurs przygotowujący do międzynarodowych certyfikatów językowych.",
-    duration: "4 miesiące",
-    level: "B1-C2",
-    features: ["Symulacje egzaminów", "Sprawdzone metody", "Gwarancja zdawalności"]
+    title: "Zajęcia dla firm",
+    description: "Oferujemy kursy ogólne oraz specjalistyczne dostosowane do potrzeb firm.",
+    duration: "Elastyczna",
+    level: "Wszystkie poziomy",
+    features: [
+      "Lekcje stacjonarne lub online",
+      "Ceny ustalane indywidualnie",
+      "Dogodne terminy",
+      "Możliwe szkolenia weekendowe"
+    ]
   }
 ];
 
@@ -32,12 +47,11 @@ const CourseSection = () => {
       <div className="container-custom">
         <div className="text-center mb-16">
           <p className="text-brand-red font-medium mb-2">NASZA OFERTA</p>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Wybierz kurs dla siebie</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Rodzaje kursów</h2>
           <div className="w-20 h-1 bg-brand-red mx-auto mb-6"></div>
           <p className="max-w-2xl mx-auto text-gray-700">
-            Oferujemy szeroki wybór kursów językowych dostosowanych do różnych poziomów 
-            zaawansowania i celów. Każdy z nich został starannie opracowany, 
-            aby zapewnić najwyższą jakość nauczania.
+            Oferujemy różne rodzaje kursów językowych dostosowanych do Twoich potrzeb i możliwości.
+            Każde zajęcia prowadzone są przez doświadczonych lektorów z pasją do nauczania.
           </p>
         </div>
 
@@ -65,7 +79,7 @@ const CourseSection = () => {
                 </div>
                 
                 <div className="mb-8">
-                  <p className="font-medium mb-3">Zawiera:</p>
+                  <p className="font-medium mb-3">Szczegóły:</p>
                   <ul className="space-y-2">
                     {course.features.map((feature, i) => (
                       <li key={i} className="flex items-center">
@@ -91,12 +105,28 @@ const CourseSection = () => {
           ))}
         </div>
         
+        <div className="mt-12 p-8 bg-white rounded-xl shadow-lg">
+          <h3 className="text-xl font-bold mb-4 text-center">Dodatkowe informacje</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+              <h4 className="font-bold mb-3 text-brand-red">Zajęcia online</h4>
+              <p className="text-gray-700 mb-4">
+                Każdy rodzaj zajęć oferowany przez nas może być prowadzony w formie zajęć zdalnych przy użyciu programu ZOOM.
+                Zajęcia online są objęte tym samym cennikiem.
+              </p>
+            </div>
+            <div>
+              <h4 className="font-bold mb-3 text-brand-red">System płatności</h4>
+              <p className="text-gray-700 mb-4">
+                Płatności mogą być uiszczane w systemie ratalnym - 2 równe wpłaty semestralne lub 10 równych rat miesięcznych.
+              </p>
+            </div>
+          </div>
+        </div>
+        
         <div className="mt-16 text-center">
-          <p className="text-lg mb-6">
-            Nie znalazłeś odpowiedniego kursu? Oferujemy również kursy indywidualne!
-          </p>
           <Button className="bg-brand-red hover:bg-brand-darkred text-white text-lg px-8 py-6">
-            Sprawdź wszystkie kursy
+            Zapisz się na zajęcia
           </Button>
         </div>
       </div>
