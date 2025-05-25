@@ -36,7 +36,7 @@ const Navbar = () => {
     >
       <div className="container-custom">
         <nav className="flex items-center justify-between">
-          <a href="#" className="z-50">
+          <a href="#" className="z-50 relative">
             <img 
               src="/lovable-uploads/a4b979b9-46ce-428b-8a5a-7486bfd8d53a.png" 
               alt="Let's Talk School" 
@@ -64,7 +64,7 @@ const Navbar = () => {
 
           {/* Mobile Navigation Button */}
           <button 
-            className="md:hidden z-50 text-brand-dark"
+            className="md:hidden z-50 relative text-brand-dark p-2"
             onClick={toggleMenu}
             aria-label="Toggle menu"
           >
@@ -72,42 +72,41 @@ const Navbar = () => {
           </button>
 
           {/* Mobile Navigation Menu */}
-          <div
-            className={cn(
-              "fixed inset-0 bg-white flex flex-col items-center justify-center space-y-8 transition-transform duration-300 ease-in-out md:hidden",
-              isOpen ? "transform translate-x-0" : "transform translate-x-full"
-            )}
-          >
-            <a 
-              href="#about" 
-              className="text-xl font-medium text-brand-dark hover:text-brand-red"
-              onClick={() => setIsOpen(false)}
+          {isOpen && (
+            <div
+              className="fixed inset-0 bg-white z-40 flex flex-col items-center justify-center space-y-8 md:hidden"
             >
-              O nas
-            </a>
-            <a 
-              href="#courses" 
-              className="text-xl font-medium text-brand-dark hover:text-brand-red"
-              onClick={() => setIsOpen(false)}
-            >
-              Kursy
-            </a>
-            <a 
-              href="#testimonials" 
-              className="text-xl font-medium text-brand-dark hover:text-brand-red"
-              onClick={() => setIsOpen(false)}
-            >
-              Opinie
-            </a>
-            <a 
-              href="#contact"
-              onClick={() => setIsOpen(false)}
-            >
-              <Button className="bg-brand-red hover:bg-brand-darkred text-white text-lg px-6 py-2">
-                Kontakt
-              </Button>
-            </a>
-          </div>
+              <a 
+                href="#about" 
+                className="text-xl font-medium text-brand-dark hover:text-brand-red"
+                onClick={() => setIsOpen(false)}
+              >
+                O nas
+              </a>
+              <a 
+                href="#courses" 
+                className="text-xl font-medium text-brand-dark hover:text-brand-red"
+                onClick={() => setIsOpen(false)}
+              >
+                Kursy
+              </a>
+              <a 
+                href="#testimonials" 
+                className="text-xl font-medium text-brand-dark hover:text-brand-red"
+                onClick={() => setIsOpen(false)}
+              >
+                Opinie
+              </a>
+              <a 
+                href="#contact"
+                onClick={() => setIsOpen(false)}
+              >
+                <Button className="bg-brand-red hover:bg-brand-darkred text-white text-lg px-6 py-2">
+                  Kontakt
+                </Button>
+              </a>
+            </div>
+          )}
         </nav>
       </div>
     </header>
