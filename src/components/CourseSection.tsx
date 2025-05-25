@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -59,16 +60,19 @@ const CourseSection = () => {
             <div 
               key={index} 
               className={cn(
-                "bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1",
-                index === 1 ? "border-2 border-brand-red relative" : ""
+                "relative bg-white rounded-xl shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-1",
+                index === 1 ? "border-2 border-brand-red mt-6" : ""
               )}
             >
               {index === 1 && (
-                <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-brand-red text-white px-4 py-2 rounded-full text-sm font-medium z-10 shadow-lg">
+                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-brand-red text-white px-4 py-2 rounded-full text-sm font-medium z-20 shadow-lg whitespace-nowrap">
                   Najpopularniejszy
                 </div>
               )}
-              <div className="p-6 md:p-8 pt-8">
+              <div className={cn(
+                "p-6 md:p-8",
+                index === 1 ? "pt-8" : ""
+              )}>
                 <h3 className="text-xl font-bold mb-3">{course.title}</h3>
                 <p className="text-gray-600 mb-6">{course.description}</p>
                 
