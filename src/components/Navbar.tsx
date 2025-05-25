@@ -23,6 +23,20 @@ const Navbar = () => {
     };
   }, []);
 
+  // Prevent body scroll when menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    // Cleanup on unmount
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isOpen]);
+
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
@@ -74,7 +88,8 @@ const Navbar = () => {
           {/* Mobile Navigation Menu */}
           {isOpen && (
             <div
-              className="fixed inset-0 bg-white z-40 flex flex-col items-center justify-center space-y-8 md:hidden"
+              className="fixed inset-0 bg-white z-40 flex flex-col items-center justify-center space-y-8 md:hidden overflow-hidden"
+              style={{ top: 0, left: 0, right: 0, bottom: 0, position: 'fixed' }}
             >
               <a 
                 href="#about" 
