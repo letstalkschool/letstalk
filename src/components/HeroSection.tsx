@@ -58,11 +58,12 @@ const HeroSection = () => {
           </div>
           
           {/* Stats */}
-          <div className="mt-8 grid grid-cols-3 gap-4">
+          <div className="mt-8 grid grid-cols-4 gap-4">
             {[
               { value: "10+", label: "Lat doświadczenia" },
               { value: "2", label: "Lokalizacje" },
-              { value: "Wysoka", label: "Skuteczność nauczania" }
+              { value: "400+", label: "Ilość kursantów" },
+              { value: "90%+", label: "Odsetek kontynuowanych kursów" }
             ].map((stat, index) => (
               <div key={index} className={cn(
                 "py-4 text-center bg-white/80 rounded-lg",
