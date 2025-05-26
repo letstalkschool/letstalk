@@ -92,6 +92,15 @@ const Navbar = () => {
       {/* Mobile Navigation Menu - moved outside header */}
       {isOpen && (
         <div className="fixed top-0 left-0 w-full h-full bg-white z-[100] flex flex-col items-center justify-center space-y-8 md:hidden">
+          {/* Close button in top-right corner */}
+          <button 
+            className="absolute top-6 right-6 text-brand-dark p-2 hover:text-brand-red transition-colors"
+            onClick={() => setIsOpen(false)}
+            aria-label="Close menu"
+          >
+            <X size={24} />
+          </button>
+
           <a 
             href="#about" 
             className="text-xl font-medium text-brand-dark hover:text-brand-red"
