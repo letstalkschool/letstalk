@@ -49,7 +49,7 @@ const Navbar = () => {
     >
       <div className="container-custom">
         <nav className="flex items-center justify-between">
-          <a href="#" className="z-[60] relative">
+          <a href="#" className="z-[80] relative">
             <img 
               src="/lovable-uploads/a4b979b9-46ce-428b-8a5a-7486bfd8d53a.png" 
               alt="Let's Talk School" 
@@ -77,7 +77,7 @@ const Navbar = () => {
 
           {/* Mobile Navigation Button */}
           <button 
-            className="md:hidden z-[70] relative text-brand-dark p-2"
+            className="md:hidden z-[90] relative text-brand-dark p-2"
             onClick={toggleMenu}
             aria-label="Toggle menu"
           >
@@ -86,10 +86,7 @@ const Navbar = () => {
 
           {/* Mobile Navigation Menu */}
           {isOpen && (
-            <div
-              className="fixed inset-0 bg-white z-[65] flex flex-col items-center justify-center space-y-8 md:hidden overflow-hidden"
-              style={{ top: 0, left: 0, right: 0, bottom: 0, position: 'fixed' }}
-            >
+            <div className="fixed inset-0 bg-white z-[85] flex flex-col items-center justify-center space-y-8 md:hidden overflow-hidden">
               <a 
                 href="#about" 
                 className="text-xl font-medium text-brand-dark hover:text-brand-red"
