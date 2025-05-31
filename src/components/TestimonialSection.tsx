@@ -1,20 +1,19 @@
-
 const testimonials = [
   {
-    content: "Bardzo profesjonalna szkoła z indywidualnym podejściem do ucznia. Zajęcia prowadzone są w miłej atmosferze, a lektorzy zawsze chętnie służą pomocą. Dzięki Let's Talk moje dzieci pokochały naukę języka!",
-    author: "Anna Kowalska",
-    role: "Mama dwójki uczniów",
+    content: "Bardzo polecam szkołę językową. Zajęcia są prowadzone w bardzo ciekawy i profesjonalny sposób. Lektorzy są otwarci na nasze propozycje i potrzeby, zaangażowani, kreatywni. Atmosfera na zajęciach jest bardzo przyjazna. Córka uczęszcza na zajęcia od roku i od września będzie kontynuować naukę w tej szkole. Szczerze polecam!",
+    author: "Agnieszka Belter",
+    role: "Mama uczennicy",
     avatar: "https://randomuser.me/api/portraits/women/17.jpg"
   },
   {
-    content: "Od lat uczęszczam na zajęcia do Let's Talk i widzę ogromne postępy. Metody nauczania są bardzo skuteczne, a atmosfera sprawia, że nauka jest przyjemnością. Polecam każdemu, kto chce skutecznie nauczyć się języka.",
-    author: "Marcin Nowak",
-    role: "Uczestnik kursu biznesowego",
+    content: "Gorąco polecam szkołę językową Let's talk Romy Górskiej. Świetna, kameralna atmosfera, doskonale przygotowani lektorzy, którzy w niezauważalny i naturalny sposób przełamują bariery językowe nawet najbardziej opornych kursantów. Dodatkowo właścicielka to niezwykle miła, otwarta i komunikatywna osoba, co w tej branży jest niezbędne. Godne polecenia dla wszystkich tych, którzy przygodę z angielskim dopiero zaczynają lub już zaczęli.",
+    author: "Piotr Nowatkowski",
+    role: "Uczestnik kursu angielskiego",
     avatar: "https://randomuser.me/api/portraits/men/32.jpg"
   },
   {
     content: "Zdecydowana większość uczniów jest z nami związana od lat, a nowi słuchacze w większości dołączają do nas z polecenia. To świadczy o jakości naszych usług i zadowoleniu uczniów.",
-    author: "Roma Włoch",
+    author: "Roma Górska",
     role: "Właścicielka szkoły Let's Talk",
     avatar: "https://randomuser.me/api/portraits/women/44.jpg"
   }

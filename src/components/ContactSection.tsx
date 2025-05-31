@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -83,7 +82,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h3 className="font-bold mb-1">Email</h3>
-                  <p className="text-gray-600">biuro@letstalk.net.pl</p>
+                  <p className="text-gray-600">poznanletstalk@gmail.com</p>
                 </div>
               </div>
               
@@ -95,7 +94,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h3 className="font-bold mb-1">Telefon</h3>
-                  <p className="text-gray-600">660 174 331</p>
+                  <p className="text-gray-600">+48 660 174 331</p>
                 </div>
               </div>
             </div>
@@ -103,7 +102,7 @@ const ContactSection = () => {
             <div className="mt-12">
               <h3 className="font-bold mb-3">Dane Firmy</h3>
               <div className="bg-white p-6 rounded-lg shadow-md">
-                <p className="mb-2"><strong>Let's talk! Roma Włoch</strong></p>
+                <p className="mb-2"><strong>Let's talk! Roma Górska</strong></p>
                 <p className="text-gray-600">ul. Milczańska 16C/21, 61-131 Poznań</p>
                 <p className="text-gray-600">NIP: 5040012644</p>
               </div>
@@ -148,7 +147,7 @@ const ContactSection = () => {
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  placeholder="660 174 331"
+                  placeholder="+48 660 174 331"
                   className="border-gray-300"
                 />
               </div>

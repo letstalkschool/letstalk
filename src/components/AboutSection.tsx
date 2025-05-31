@@ -1,4 +1,3 @@
-
 import { GraduationCap } from "lucide-react";
 import { SCHOOL_IMAGES } from "@/pages/Index";
 
@@ -67,7 +66,7 @@ const AboutSection = () => {
                 className="rounded-lg shadow-xl object-cover w-full h-[600px] relative z-10"
               />
               <div className="absolute bottom-8 -right-8 bg-white p-6 rounded-lg shadow-lg z-20">
-                <p className="text-4xl font-serif font-bold text-brand-red mb-1">10+</p>
+                <p className="text-4xl font-serif font-bold text-brand-red mb-1">15+</p>
                 <p className="text-gray-700">Lat doświadczenia w nauczaniu</p>
               </div>
             </div>

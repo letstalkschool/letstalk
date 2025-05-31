@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import ImageCarousel from "./ImageCarousel";
@@ -38,7 +37,7 @@ const HeroSection = () => {
             Szkoła językowa <span className="text-brand-red">Let's Talk!</span>
           </h1>
           <p className="text-lg md:text-xl text-gray-700 mb-8 max-w-lg">
-            Od 10 lat pomagamy naszym uczniom rozwinąć skrzydła. Profesjonalnie i z pasją! 
+            Od 15 lat pomagamy naszym uczniom rozwinąć skrzydła. Profesjonalnie i z pasją! 
             Oferujemy ciekawe zajęcia, skrojone na miarę potrzeb naszych uczniów.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
@@ -60,7 +59,7 @@ const HeroSection = () => {
           {/* Stats */}
           <div className="mt-8 grid grid-cols-4 gap-4">
             {[
-              { value: "10+", label: "Lat doświadczenia" },
+              { value: "15+", label: "Lat doświadczenia" },
               { value: "2", label: "Lokalizacje" },
               { value: "400+", label: "Ilość kursantów" },
               { value: "90%+", label: "Odsetek kontynuowanych kursów" }
