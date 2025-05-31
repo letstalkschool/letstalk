@@ -1,45 +1,6 @@
-
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-
-const courses = [
-  {
-    title: "Zajęcia grupowe",
-    description: "Małe grupy liczące od 2 do 8 osób, dostosowane do poziomu językowego i wieku uczniów.",
-    duration: "30 lekcji",
-    level: "Wszystkie poziomy",
-    features: [
-      "Zajęcia 1-2 razy w tygodniu",
-      "Grupy 2-osobowe: 2100zł/os",
-      "Grupy 3-osobowe: 1800zł/os",
-      "Grupy 4-6 osób: 1500zł/os"
-    ]
-  },
-  {
-    title: "Zajęcia indywidualne",
-    description: "Kursy szyte na miarę każdego ucznia, odpowiadające w pełni na indywidualne potrzeby.",
-    duration: "Elastyczna",
-    level: "Wszystkie poziomy",
-    features: [
-      "Kursy ogólne i specjalistyczne",
-      "30 lekcji: 99zł/lekcja",
-      "60 lekcji: 94zł/lekcja",
-      "90-120 lekcji: od 80zł/lekcja"
-    ]
-  },
-  {
-    title: "Zajęcia dla firm",
-    description: "Oferujemy kursy ogólne oraz specjalistyczne dostosowane do potrzeb firm.",
-    duration: "Elastyczna",
-    level: "Wszystkie poziomy",
-    features: [
-      "Lekcje stacjonarne lub online",
-      "Ceny ustalane indywidualnie",
-      "Dogodne terminy",
-      "Możliwe szkolenia weekendowe"
-    ]
-  }
-];
+import { courses } from "@/config/courses";
 
 const CourseSection = () => {
   return (
@@ -58,20 +19,20 @@ const CourseSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {courses.map((course, index) => (
             <div 
-              key={index} 
+              key={course.id} 
               className={cn(
                 "relative bg-white rounded-xl shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-1",
-                index === 1 ? "border-2 border-brand-red mt-6" : ""
+                course.isPopular ? "border-2 border-brand-red mt-6" : ""
               )}
             >
-              {index === 1 && (
+              {course.isPopular && (
                 <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-brand-red text-white px-4 py-2 rounded-full text-sm font-medium z-20 shadow-lg whitespace-nowrap">
                   Najpopularniejszy
                 </div>
               )}
               <div className={cn(
                 "p-6 md:p-8",
-                index === 1 ? "pt-8" : ""
+                course.isPopular ? "pt-8" : ""
               )}>
                 <h3 className="text-xl font-bold mb-3">{course.title}</h3>
                 <p className="text-gray-600 mb-6">{course.description}</p>
@@ -80,6 +41,13 @@ const CourseSection = () => {
                   <span>Czas trwania: {course.duration}</span>
                   <span>Poziom: {course.level}</span>
                 </div>
+
+                {course.schedule && (
+                  <div className="mb-4 text-sm text-gray-600">
+                    <p>Częstotliwość: {course.schedule.frequency}</p>
+                    <p>Czas trwania zajęć: {course.schedule.duration}</p>
+                  </div>
+                )}
                 
                 <div className="mb-8">
                   <p className="font-medium mb-3">Szczegóły:</p>
@@ -97,7 +65,7 @@ const CourseSection = () => {
                 
                 <Button className={cn(
                   "w-full",
-                  index === 1 
+                  course.isPopular 
                     ? "bg-brand-red hover:bg-brand-darkred text-white" 
                     : "bg-white border border-brand-red text-brand-red hover:bg-brand-red/5"
                 )}>
