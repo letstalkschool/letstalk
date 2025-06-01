@@ -111,7 +111,14 @@ const ContactSection = () => {
           
           <div className="bg-white rounded-xl shadow-lg p-8">
             <h3 className="text-2xl font-bold mb-6">Wyślij wiadomość</h3>
-            <form onSubmit={handleSubmit}>
+            <form 
+              name="contact" 
+              method="POST" 
+              data-netlify="true"
+              data-netlify-honeypot="bot-field"
+              onSubmit={handleSubmit}
+            >
+              <input type="hidden" name="form-name" value="contact" />
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Imię i nazwisko</label>

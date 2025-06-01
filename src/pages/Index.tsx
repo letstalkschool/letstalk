@@ -12,7 +12,7 @@ export const SCHOOL_IMAGES = {
   classroom: "/lovable-uploads/kid.png",
   groupLessons: "/lovable-uploads/class.png",
   activities: "/lovable-uploads/6ca6be47-88ab-45de-9455-0e5db41f0f3c.png", 
-  teacherAndStudents: "/lovable-uploads/roma.png",
+  teacherAndStudents: "/lovable-uploads/roma.jpg",
   gameBasedLearning: "/lovable-uploads/55ad5d90-13c6-46a5-b40a-963e253547b5.png",
   teachers: "/lovable-uploads/e78168f2-c3cd-4c14",
   teachingMaterials: "/lovable-uploads/847f1c7e-7fa1-4fab-855137d1.png",
