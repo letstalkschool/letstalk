@@ -1,8 +1,41 @@
+
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { courses } from "@/config/courses";
+import { useCourseData } from "@/hooks/useCourseData";
 
 const CourseSection = () => {
+  const { data: courses, isLoading, error } = useCourseData();
+
+  if (isLoading) {
+    return (
+      <section id="courses" className="section-padding">
+        <div className="container-custom">
+          <div className="text-center">
+            <p className="text-brand-red font-medium mb-2">NASZA OFERTA</p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Rodzaje kursów</h2>
+            <div className="w-20 h-1 bg-brand-red mx-auto mb-6"></div>
+            <p className="text-gray-600">Ładowanie kursów...</p>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  if (error) {
+    return (
+      <section id="courses" className="section-padding">
+        <div className="container-custom">
+          <div className="text-center">
+            <p className="text-brand-red font-medium mb-2">NASZA OFERTA</p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Rodzaje kursów</h2>
+            <div className="w-20 h-1 bg-brand-red mx-auto mb-6"></div>
+            <p className="text-red-600">Błąd podczas ładowania kursów</p>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section id="courses" className="section-padding">
       <div className="container-custom">
@@ -17,7 +50,7 @@ const CourseSection = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {courses.map((course, index) => (
+          {courses?.map((course, index) => (
             <div 
               key={course.id} 
               className={cn(
@@ -52,7 +85,7 @@ const CourseSection = () => {
                 <div className="mb-8">
                   <p className="font-medium mb-3">Szczegóły:</p>
                   <ul className="space-y-2">
-                    {course.features.map((feature, i) => (
+                    {course.features?.map((feature, i) => (
                       <li key={i} className="flex items-center">
                         <svg className="w-4 h-4 mr-2 text-brand-red" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path>
