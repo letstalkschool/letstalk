@@ -10,7 +10,9 @@ const parseCsvToCourses = (csvText: string): Course[] => {
   
   return lines.slice(1).map((line, index) => {
     const values = line.split(',').map(value => value.trim().replace(/"/g, ''));
-    const course: any = {};
+    const course: any = {
+      features: [] // Initialize features as empty array
+    };
     
     headers.forEach((header, i) => {
       const value = values[i] || '';
@@ -31,13 +33,10 @@ const parseCsvToCourses = (csvText: string): Course[] => {
         case 'level':
           course.level = value;
           break;
-        case 'features':
-          course.features = value.split(';').map(f => f.trim()).filter(f => f);
-          break;
         case 'ispopular':
           course.isPopular = value.toLowerCase() === 'true';
           break;
-        case 'price_amount':
+        case 'pricing_amount':
           if (value) {
             course.price = { 
               amount: parseInt(value), 
@@ -46,21 +45,35 @@ const parseCsvToCourses = (csvText: string): Course[] => {
             };
           }
           break;
-        case 'schedule_frequency':
+        case 'timing_frequency':
           if (value) {
             course.schedule = { 
               frequency: value, 
-              duration: values[headers.indexOf('schedule_duration')] || '60 minut' 
+              duration: values[headers.indexOf('timing_session')] || '60 minut' 
             };
           }
           break;
-        case 'schedule_duration':
+        case 'timing_session':
           if (course.schedule) {
             course.schedule.duration = value;
           }
           break;
+        default:
+          // Handle multiple feature columns (features_1, features_2, etc.)
+          if (header.toLowerCase().startsWith('features_') && value) {
+            course.features.push(value);
+          }
+          break;
       }
     });
+    
+    // Ensure all required fields have default values
+    if (!course.features) course.features = [];
+    if (!course.schedule) {
+      course.schedule = { frequency: '', duration: '' };
+    }
+    
+    console.log(`Parsed course ${index + 1}:`, course);
     
     return course as Course;
   });
