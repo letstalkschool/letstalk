@@ -1,49 +1,8 @@
-
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { useCourseData } from "@/hooks/useCourseData";
+import { courses } from "@/config/courses";
 
 const CourseSection = () => {
-  const { data: courses, isLoading, error } = useCourseData();
-
-  if (isLoading) {
-    return (
-      <section id="courses" className="section-padding">
-        <div className="container-custom">
-          <div className="text-center">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-brand-red mx-auto"></div>
-            <p className="mt-4 text-gray-600">Ładowanie kursów...</p>
-          </div>
-        </div>
-      </section>
-    );
-  }
-
-  if (error) {
-    return (
-      <section id="courses" className="section-padding">
-        <div className="container-custom">
-          <div className="text-center">
-            <p className="text-red-600">Błąd podczas ładowania kursów. Spróbuj ponownie później.</p>
-            <p className="text-sm text-gray-500 mt-2">Error: {error.message}</p>
-          </div>
-        </div>
-      </section>
-    );
-  }
-
-  if (!courses || courses.length === 0) {
-    return (
-      <section id="courses" className="section-padding">
-        <div className="container-custom">
-          <div className="text-center">
-            <p className="text-gray-600">Brak dostępnych kursów.</p>
-          </div>
-        </div>
-      </section>
-    );
-  }
-
   return (
     <section id="courses" className="section-padding">
       <div className="container-custom">
