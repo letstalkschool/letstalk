@@ -1,3 +1,4 @@
+
 const testimonials = [
   {
     content: "Bardzo polecam szkołę językową. Zajęcia są prowadzone w bardzo ciekawy i profesjonalny sposób. Lektorzy są otwarci na nasze propozycje i potrzeby, zaangażowani, kreatywni. Atmosfera na zajęciach jest bardzo przyjazna. Córka uczęszcza na zajęcia od roku i od września będzie kontynuować naukę w tej szkole. Szczerze polecam!",
@@ -20,14 +21,6 @@ const testimonials = [
 ];
 
 const TestimonialSection = () => {
-  const getInitials = (name: string) => {
-    return name
-      .split(' ')
-      .map(word => word.charAt(0))
-      .join('')
-      .toUpperCase();
-  };
-
   return (
     <section id="testimonials" className="section-padding bg-brand-red/5">
       <div className="container-custom">
@@ -55,17 +48,10 @@ const TestimonialSection = () => {
                 <p className="text-gray-700 italic relative z-10">{testimonial.content}</p>
               </div>
               
-              {/* Author info */}
-              <div className="flex items-center">
-                <div className="w-12 h-12 rounded-full bg-brand-red/10 flex items-center justify-center mr-4 border-2 border-brand-red">
-                  <span className="text-brand-red font-bold text-lg">
-                    {getInitials(testimonial.author)}
-                  </span>
-                </div>
-                <div>
-                  <h4 className="font-bold">{testimonial.author}</h4>
-                  <p className="text-sm text-gray-600">{testimonial.role}</p>
-                </div>
+              {/* Author info - simplified */}
+              <div>
+                <h4 className="font-bold">{testimonial.author}</h4>
+                <p className="text-sm text-gray-600">{testimonial.role}</p>
               </div>
             </div>
           ))}
