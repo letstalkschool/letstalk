@@ -10,6 +10,7 @@ import Footer from "@/components/Footer";
 // to make it easier to replace them in the future
 export const SCHOOL_IMAGES = {
   classroom: "/lovable-uploads/kid.png",
+  board: "/lovable-uploads/94a61802-b9d5-42c7-a45a-20a30fc31960.png",
   groupLessons: "/lovable-uploads/class.png",
   activities: "/lovable-uploads/6ca6be47-88ab-45de-9455-0e5db41f0f3c.png", 
   teacherAndStudents: "/lovable-uploads/roma.jpg",
