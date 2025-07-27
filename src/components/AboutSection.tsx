@@ -1,7 +1,19 @@
+
 import { GraduationCap } from "lucide-react";
 import { SCHOOL_IMAGES } from "@/pages/Index";
+import ImageCarousel from "./ImageCarousel";
 
 const AboutSection = () => {
+  // Select multiple images for the carousel
+  const carouselImages = [
+    SCHOOL_IMAGES.teachingSession,
+    SCHOOL_IMAGES.classroom,
+    SCHOOL_IMAGES.groupLessons,
+    SCHOOL_IMAGES.activities,
+    SCHOOL_IMAGES.teacherAndStudents,
+    SCHOOL_IMAGES.gameBasedLearning
+  ];
+
   return (
     <section id="about" className="section-padding bg-brand-cream">
       <div className="container-custom">
@@ -55,15 +67,16 @@ const AboutSection = () => {
             </div>
           </div>
 
-          {/* Image with decorative elements */}
+          {/* Image carousel with decorative elements */}
           <div className="order-1 lg:order-2">
             <div className="relative">
               <div className="absolute -top-5 -left-5 w-24 h-24 bg-brand-red/20 rounded-full"></div>
               <div className="absolute -bottom-5 -right-5 w-32 h-32 bg-brand-red/10 rounded-full"></div>
-              <img
-                src={SCHOOL_IMAGES.teachingSession}
-                alt="Zajęcia w szkole Let's Talk"
-                className="rounded-lg shadow-xl object-cover w-full h-[600px] relative z-10"
+              <ImageCarousel
+                images={carouselImages}
+                className="relative z-10 h-[600px]"
+                autoplay={true}
+                interval={4000}
               />
               <div className="absolute bottom-8 -right-8 bg-white p-6 rounded-lg shadow-lg z-20">
                 <p className="text-4xl font-serif font-bold text-brand-red mb-1">15+</p>

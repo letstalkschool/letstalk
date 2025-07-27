@@ -95,15 +95,6 @@ const CourseSection = () => {
                     ))}
                   </ul>
                 </div>
-                
-                <Button className={cn(
-                  "w-full",
-                  course.isPopular 
-                    ? "bg-brand-red hover:bg-brand-darkred text-white" 
-                    : "bg-white border border-brand-red text-brand-red hover:bg-brand-red/5"
-                )}>
-                  Więcej informacji
-                </Button>
               </div>
             </div>
           ))}

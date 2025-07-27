@@ -1,3 +1,4 @@
+
 const testimonials = [
   {
     content: "Bardzo polecam szkołę językową. Zajęcia są prowadzone w bardzo ciekawy i profesjonalny sposób. Lektorzy są otwarci na nasze propozycje i potrzeby, zaangażowani, kreatywni. Atmosfera na zajęciach jest bardzo przyjazna. Córka uczęszcza na zajęcia od roku i od września będzie kontynuować naukę w tej szkole. Szczerze polecam!",
@@ -47,17 +48,10 @@ const TestimonialSection = () => {
                 <p className="text-gray-700 italic relative z-10">{testimonial.content}</p>
               </div>
               
-              {/* Author info */}
-              <div className="flex items-center">
-                <img 
-                  src={testimonial.avatar} 
-                  alt={testimonial.author} 
-                  className="w-12 h-12 rounded-full object-cover mr-4 border-2 border-brand-red"
-                />
-                <div>
-                  <h4 className="font-bold">{testimonial.author}</h4>
-                  <p className="text-sm text-gray-600">{testimonial.role}</p>
-                </div>
+              {/* Author info - simplified */}
+              <div>
+                <h4 className="font-bold">{testimonial.author}</h4>
+                <p className="text-sm text-gray-600">{testimonial.role}</p>
               </div>
             </div>
           ))}
@@ -71,6 +65,27 @@ const TestimonialSection = () => {
           <button className="bg-brand-red hover:bg-brand-darkred text-white px-8 py-3 rounded-lg font-medium transition-colors">
             Zapisz się na zajęcia
           </button>
+        </div>
+
+        {/* Child Protection Standards Section */}
+        <div className="mt-16 text-center">
+          <div className="bg-white rounded-xl shadow-lg p-8">
+            <h3 className="text-xl font-bold mb-4 text-brand-red">Standardy Ochrony Małoletnich</h3>
+            <p className="text-gray-700 mb-4">
+              Bezpieczeństwo i ochrona naszych najmłodszych uczniów to nasz priorytet.
+            </p>
+            <a 
+              href="https://docs.google.com/document/d/e/2PACX-1vSZZRIoZZ_gkmabSEFRvkUyez8rk--ClsiIlCmk3HpTNKoBJy0dyeMiPWbaxYIvHA2LW9rOYjqH72Wl/pub"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center text-brand-red hover:text-brand-darkred font-medium transition-colors"
+            >
+              Zapoznaj się z naszymi standardami
+              <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </a>
+          </div>
         </div>
       </div>
     </section>
