@@ -7,7 +7,8 @@ const HeroSection = () => {
   const carouselImages = [
     SCHOOL_IMAGES.teacherAndStudents,
     SCHOOL_IMAGES.classroom,
-    SCHOOL_IMAGES.groupLessons
+    SCHOOL_IMAGES.groupLessons, 
+    SCHOOL_IMAGES.board
   ];
 
   return (
