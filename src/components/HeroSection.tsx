@@ -6,10 +6,30 @@ import { SCHOOL_IMAGES } from "@/pages/Index";
 const HeroSection = () => {
   const carouselImages = [
     SCHOOL_IMAGES.teacherAndStudents,
+    SCHOOL_IMAGES.board,
     SCHOOL_IMAGES.classroom,
     SCHOOL_IMAGES.groupLessons, 
-    SCHOOL_IMAGES.board
   ];
+
+  const scrollToForm = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
+  const scrollToCourses = () => {
+    const coursesSection = document.getElementById('courses');
+    if (coursesSection) {
+      coursesSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
 
   return (
     <section className="relative min-h-screen flex items-center pt-20">
@@ -42,10 +62,17 @@ const HeroSection = () => {
             Oferujemy ciekawe zajęcia, skrojone na miarę potrzeb naszych uczniów.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button className="bg-brand-red hover:bg-brand-darkred text-white text-lg px-8 py-6">
+            <Button 
+              onClick={scrollToForm}
+              className="bg-brand-red hover:bg-brand-darkred text-white text-lg px-8 py-6"
+            >
               Zapisz się na kurs
             </Button>
-            <Button variant="outline" className="border-brand-red text-brand-red hover:bg-brand-red/5 text-lg px-8 py-6">
+            <Button 
+              onClick={scrollToCourses}
+              variant="outline" 
+              className="border-brand-red text-brand-red hover:bg-brand-red/5 text-lg px-8 py-6"
+            >
               Dowiedz się więcej
             </Button>
           </div>

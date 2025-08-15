@@ -14,7 +14,7 @@ const Footer = () => {
               />
             </a>
             <p className="text-gray-400 mb-6">
-              Od 10 lat pomagamy naszym uczniom rozwinąć skrzydła. 
+              Od 15 lat pomagamy naszym uczniom rozwinąć skrzydła. 
               Profesjonalnie i z pasją! Oferujemy ciekawe zajęcia, 
               skrojone na miarę potrzeb naszych uczniów.
             </p>

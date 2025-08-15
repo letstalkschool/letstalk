@@ -21,6 +21,16 @@ const testimonials = [
 ];
 
 const TestimonialSection = () => {
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   return (
     <section id="testimonials" className="section-padding bg-brand-red/5">
       <div className="container-custom">
@@ -62,7 +72,10 @@ const TestimonialSection = () => {
             <h3 className="text-2xl md:text-3xl font-bold mb-2">Gotowy na nową przygodę językową?</h3>
             <p className="text-gray-600">Dołącz do grona zadowolonych uczniów Let's Talk już dziś!</p>
           </div>
-          <button className="bg-brand-red hover:bg-brand-darkred text-white px-8 py-3 rounded-lg font-medium transition-colors">
+          <button 
+            onClick={scrollToContact}
+            className="bg-brand-red hover:bg-brand-darkred text-white px-8 py-3 rounded-lg font-medium transition-colors"
+          >
             Zapisz się na zajęcia
           </button>
         </div>

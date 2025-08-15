@@ -18,18 +18,44 @@ const ContactSection = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Wiadomość wysłana!",
-      description: "Dziękujemy za kontakt. Odezwiemy się najszybciej jak to możliwe.",
-    });
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      message: ""
-    });
+    
+    try {
+      const formDataToSend = new FormData();
+      formDataToSend.append('name', formData.name);
+      formDataToSend.append('email', formData.email);
+      formDataToSend.append('phone', formData.phone);
+      formDataToSend.append('message', formData.message);
+      
+      // Submit to Netlify
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(formDataToSend as any).toString()
+      });
+      
+      if (response.ok) {
+        toast({
+          title: "Wiadomość wysłana!",
+          description: "Dziękujemy za kontakt. Odezwiemy się najszybciej jak to możliwe.",
+        });
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          message: ""
+        });
+      } else {
+        throw new Error('Form submission failed');
+      }
+    } catch (error) {
+      toast({
+        title: "Błąd!",
+        description: "Wystąpił błąd podczas wysyłania wiadomości. Spróbuj ponownie.",
+        variant: "destructive",
+      });
+    }
   };
 
   return (
@@ -116,6 +142,7 @@ const ContactSection = () => {
               method="POST" 
               data-netlify="true"
               data-netlify-honeypot="bot-field"
+              data-netlify-email="poznanletstalk@gmail.com"
               onSubmit={handleSubmit}
             >
               <input type="hidden" name="form-name" value="contact" />

@@ -6,6 +6,16 @@ import { useCourseData } from "@/hooks/useCourseData";
 const CourseSection = () => {
   const { data: courses, isLoading, error } = useCourseData();
 
+  const scrollToForm = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   if (isLoading) {
     return (
       <section id="courses" className="section-padding">
@@ -120,7 +130,10 @@ const CourseSection = () => {
         </div>
         
         <div className="mt-16 text-center">
-          <Button className="bg-brand-red hover:bg-brand-darkred text-white text-lg px-8 py-6">
+          <Button 
+            onClick={scrollToForm}
+            className="bg-brand-red hover:bg-brand-darkred text-white text-lg px-8 py-6"
+          >
             Zapisz się na zajęcia
           </Button>
         </div>
