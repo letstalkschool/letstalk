@@ -22,8 +22,9 @@ const ContactSection = () => {
     e.preventDefault();
     
     try {
-      // Submit to Netlify. The form-name field is required by Netlify.
-      const response = await fetch('/', {
+      // Submit to Netlify. Netlify needs the form-name field and a real
+      // HTML file path. A POST to '/' returns 404.
+      const response = await fetch('/index.html', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: new URLSearchParams({
