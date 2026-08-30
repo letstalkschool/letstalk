@@ -22,17 +22,14 @@ const ContactSection = () => {
     e.preventDefault();
     
     try {
-      const formDataToSend = new FormData();
-      formDataToSend.append('name', formData.name);
-      formDataToSend.append('email', formData.email);
-      formDataToSend.append('phone', formData.phone);
-      formDataToSend.append('message', formData.message);
-      
-      // Submit to Netlify
+      // Submit to Netlify. The form-name field is required by Netlify.
       const response = await fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(formDataToSend as any).toString()
+        body: new URLSearchParams({
+          'form-name': 'contact',
+          ...formData
+        }).toString()
       });
       
       if (response.ok) {
@@ -142,7 +139,7 @@ const ContactSection = () => {
               method="POST" 
               data-netlify="true"
               data-netlify-honeypot="bot-field"
-              data-netlify-email="poznanletstalk@gmail.com"
+              data-netlify-email="szymon.p.pankowski@gmail.com"
               onSubmit={handleSubmit}
             >
               <input type="hidden" name="form-name" value="contact" />
