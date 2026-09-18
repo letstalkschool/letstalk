@@ -34,6 +34,7 @@ const ContactSection = () => {
       });
       
       if (response.ok) {
+        window.dataLayer?.push({ event: 'form_submit' });
         toast({
           title: "Wiadomość wysłana!",
           description: "Dziękujemy za kontakt. Odezwiemy się najszybciej jak to możliwe.",
@@ -118,7 +119,8 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h3 className="font-bold mb-1">Telefon</h3>
-                  <p className="text-gray-600">+48 660 174 331</p>
+                  <p><a href="tel:+48660174331" className="text-brand-red font-semibold hover:underline">+48 660 174 331</a></p>
+                  <p className="text-sm text-gray-500 md:hidden">Dotknij, aby zadzwonić</p>
                 </div>
               </div>
             </div>

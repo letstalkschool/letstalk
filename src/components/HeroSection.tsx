@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Phone } from "lucide-react";
 import { cn } from "@/lib/utils";
 import ImageCarousel from "./ImageCarousel";
 import { SCHOOL_IMAGES } from "@/pages/Index";
@@ -15,16 +16,6 @@ const HeroSection = () => {
     const contactSection = document.getElementById('contact');
     if (contactSection) {
       contactSection.scrollIntoView({ 
-        behavior: 'smooth',
-        block: 'start'
-      });
-    }
-  };
-
-  const scrollToCourses = () => {
-    const coursesSection = document.getElementById('courses');
-    if (coursesSection) {
-      coursesSection.scrollIntoView({ 
         behavior: 'smooth',
         block: 'start'
       });
@@ -63,17 +54,17 @@ const HeroSection = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Button 
-              onClick={scrollToForm}
+              asChild
               className="bg-brand-red hover:bg-brand-darkred text-white text-lg px-8 py-6"
             >
-              Zapisz się na kurs
+              <a href="tel:+48660174331"><Phone className="mr-2 h-5 w-5" />Zadzwoń</a>
             </Button>
             <Button 
-              onClick={scrollToCourses}
+              onClick={scrollToForm}
               variant="outline" 
               className="border-brand-red text-brand-red hover:bg-brand-red/5 text-lg px-8 py-6"
             >
-              Dowiedz się więcej
+              Zapisz się na kurs
             </Button>
           </div>
           
